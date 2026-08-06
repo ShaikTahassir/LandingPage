@@ -3,67 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MarkupMenus — choose Urban Skillet or Mountop Nutrition and continue to the official ordering page." />
-  <meta name="theme-color" content="#12130f" />
-  <title>MarkupMenus | CrossOver Burgers & Healthy Meals</title>
+  <meta name="description" content="MarkupMenus — choose Urban Skillet or Mountop Nutrition and order from the official restaurant website." />
+  <meta name="theme-color" content="#11130f" />
+  <title>MarkupMenus | Burgers & Healthy Meals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="landing-shell">
+  <main class="page-shell">
     <header class="topbar">
-      <a class="brand" href="#" aria-label="MarkupMenus home">
+      <a class="brand" href="#top" aria-label="MarkupMenus home">
         <span class="brand-mark">M</span>
-        <span>
+        <span class="brand-copy">
           <strong>MarkupMenus</strong>
           <small>One stop. Two menus.</small>
         </span>
       </a>
-      <span class="secure-note">Official ordering links ↗</span>
+      <span class="header-note">Official ordering links</span>
     </header>
 
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Northridge favorites</p>
-        <h1>CrossOver<br><span>Burgers &amp;<br>Healthy Meals :)</span></h1>
-        <p class="intro">Pick your craving and continue directly to the restaurant’s official ordering page.</p>
+    <section class="hero" id="top">
+      <p class="eyebrow">Northridge favorites</p>
+      <h1>Burgers or healthy meals?</h1>
+      <p class="subtitle">Choose a restaurant and order directly from its official website.</p>
 
-        <div class="menu-actions" aria-label="Choose a restaurant">
-          <a class="menu-card urban" href="https://urbanskilletcd.square.site/#most-popular" target="_blank" rel="noopener noreferrer">
-            <span class="menu-icon" aria-hidden="true">🍔</span>
-            <span class="menu-copy">
-              <small>Bold comfort food</small>
-              <strong>Urban Skillet</strong>
-              <em>Northridge</em>
-            </span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
+      <div class="restaurant-grid" aria-label="Restaurant options">
+        <article class="restaurant-card urban-card">
+          <div class="card-visual urban-visual" aria-hidden="true">
+            <div class="food-badge">100% Halal</div>
+            <div class="burger-art">
+              <span class="bun top-bun"></span>
+              <span class="lettuce"></span>
+              <span class="cheese"></span>
+              <span class="patty"></span>
+              <span class="bun bottom-bun"></span>
+            </div>
+            <span class="visual-label">Bold comfort food</span>
+          </div>
 
-          <a class="menu-card mountop" href="https://www.mountopnutrition.com/" target="_blank" rel="noopener noreferrer">
-            <span class="menu-icon" aria-hidden="true">🥗</span>
-            <span class="menu-copy">
-              <small>Fresh &amp; protein-focused</small>
-              <strong>Mountop Nutrition</strong>
-              <em>Healthy meals</em>
-            </span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
+          <div class="card-content">
+            <span class="card-kicker">Burgers • Fries • Shakes</span>
+            <h2>Urban Skillet</h2>
+            <p>Grass-fed halal burgers and crowd-favorite comfort food.</p>
+            <a class="order-button urban-button" href="https://urbanskilletcd.square.site/#most-popular" target="_blank" rel="noopener noreferrer">
+              Order Urban Skillet <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
 
-      <div class="hero-art" aria-hidden="true">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="plate-back"></div>
-        <div class="plate">
-          <span class="food burger">🍔</span>
-          <span class="food bowl">🥗</span>
-          <span class="food fries">🍟</span>
-        </div>
-        <span class="chip halal">100% Halal</span>
-        <span class="chip fresh">Fresh &amp; flavorful</span>
+        <article class="restaurant-card mountop-card">
+          <div class="card-visual mountop-visual" aria-hidden="true">
+            <div class="food-badge">Protein Focused</div>
+            <div class="bowl-art">
+              <span class="leaf leaf-one"></span>
+              <span class="leaf leaf-two"></span>
+              <span class="tomato tomato-one"></span>
+              <span class="tomato tomato-two"></span>
+              <span class="grain grain-one"></span>
+              <span class="grain grain-two"></span>
+              <span class="bowl-base"></span>
+            </div>
+            <span class="visual-label">Fresh & flavorful</span>
+          </div>
+
+          <div class="card-content">
+            <span class="card-kicker">Bowls • Wraps • Nutrition</span>
+            <h2>Mountop Nutrition</h2>
+            <p>Fresh, protein-focused meals made for a balanced lifestyle.</p>
+            <a class="order-button mountop-button" href="https://www.mountopnutrition.com/" target="_blank" rel="noopener noreferrer">
+              Order Mountop <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
       </div>
     </section>
 
