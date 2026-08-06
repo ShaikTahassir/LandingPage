@@ -8,9 +8,10 @@ A responsive restaurant selector designed for GitHub Pages.
 2. Upload `index.html`, `styles.css`, and `script.js` to the repository root.
 3. Open the repository's **Settings**.
 4. Select **Pages** from the left menu.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select the `main` branch and `/ (root)` folder, then click **Save**.
-7. GitHub will display the public website URL after deployment.
+5. 
+6. Under **Build and deployment**, choose **Deploy from a branch**.
+7. Select the `main` branch and `/ (root)` folder, then click **Save**.
+8. GitHub will display the public website URL after deployment.
 
 ## Ordering links
 
