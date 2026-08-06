@@ -1,121 +1,79 @@
 :root {
-  --ink: #11130f;
+  --ink: #10120f;
   --panel: #191c17;
-  --paper: #f6f0e5;
   --lime: #c8ef4b;
   --orange: #ff7135;
-  --green: #367458;
-  --green-light: #bfe887;
   --white: #ffffff;
-  --muted: #c7c8c0;
+  --muted: #c7c9c1;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html, body { margin: 0; min-height: 100%; }
 body {
-  margin: 0;
   min-height: 100vh;
-  background: #d9d7cf;
   color: var(--white);
+  background: #d8d6cd;
   font-family: "DM Sans", sans-serif;
 }
-a { color: inherit; }
 
 .page-shell {
-  width: min(1480px, 100%);
   min-height: 100vh;
-  margin: 0 auto;
-  background:
-    radial-gradient(circle at 82% 18%, rgba(200,239,75,.11), transparent 25%),
-    radial-gradient(circle at 12% 92%, rgba(255,113,53,.10), transparent 30%),
-    var(--ink);
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  position: relative;
+  place-items: center;
+  padding: 28px;
   overflow: hidden;
-  box-shadow: 0 0 70px rgba(0,0,0,.18);
+  background:
+    linear-gradient(135deg, transparent 0 32%, rgba(255,255,255,.025) 32% 35%, transparent 35% 67%, rgba(255,255,255,.02) 67% 70%, transparent 70%),
+    radial-gradient(circle at 85% 20%, rgba(200,239,75,.12), transparent 26%),
+    radial-gradient(circle at 10% 90%, rgba(255,113,53,.11), transparent 30%),
+    var(--ink);
+  position: relative;
 }
 
 .page-shell::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.13) 1px, transparent 0);
-  background-size: 28px 28px;
-  opacity: .4;
   pointer-events: none;
+  opacity: .32;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 0);
+  background-size: 28px 28px;
 }
-
-.topbar {
-  min-height: 72px;
-  padding: 14px clamp(20px, 5vw, 72px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255,255,255,.1);
-  position: relative;
-  z-index: 2;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-
-.brand-mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  background: var(--lime);
-  color: var(--ink);
-  font-family: "Oswald", sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  transform: rotate(-4deg);
-}
-
-.brand-copy { display: grid; line-height: 1.06; }
-.brand-copy strong { font-size: 16px; }
-.brand-copy small, .header-note { color: #aeb0a8; font-size: 12px; }
 
 .hero {
-  width: min(1180px, calc(100% - 40px));
-  margin: auto;
-  padding: 44px 0 50px;
+  width: min(1120px, 100%);
   position: relative;
   z-index: 1;
 }
 
-.eyebrow {
+.brand-name {
   margin: 0 0 8px;
   color: var(--orange);
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: .18em;
+  letter-spacing: .22em;
   font-size: 12px;
   font-weight: 800;
-  text-align: center;
 }
 
 h1 {
-  margin: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
   font-family: "Oswald", sans-serif;
-  font-size: clamp(48px, 6.5vw, 84px);
+  font-size: clamp(44px, 6vw, 78px);
   line-height: .98;
   text-transform: uppercase;
-  text-align: center;
   letter-spacing: -.03em;
 }
 
+h1 span { color: var(--lime); }
+
 .subtitle {
-  margin: 14px auto 32px;
-  max-width: 620px;
-  color: var(--muted);
+  margin: 12px 0 28px;
   text-align: center;
-  font-size: clamp(15px, 1.5vw, 18px);
+  color: var(--muted);
+  font-size: clamp(15px, 1.4vw, 18px);
 }
 
 .restaurant-grid {
@@ -126,22 +84,22 @@ h1 {
 
 .restaurant-card {
   min-width: 0;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 28px;
   overflow: hidden;
-  background: rgba(25,28,23,.96);
-  box-shadow: 0 26px 70px rgba(0,0,0,.28);
-  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 28px;
+  background: rgba(25,28,23,.97);
+  box-shadow: 0 28px 75px rgba(0,0,0,.32);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
 .restaurant-card:hover {
   transform: translateY(-7px);
-  border-color: rgba(255,255,255,.25);
-  box-shadow: 0 34px 80px rgba(0,0,0,.38);
+  border-color: rgba(255,255,255,.28);
+  box-shadow: 0 38px 90px rgba(0,0,0,.42);
 }
 
 .card-visual {
-  height: 230px;
+  height: 220px;
   position: relative;
   display: grid;
   place-items: center;
@@ -150,40 +108,40 @@ h1 {
 
 .urban-visual {
   background:
-    radial-gradient(circle at 72% 20%, rgba(255,255,255,.18), transparent 25%),
-    linear-gradient(135deg, #ff8a4e, #e84e22);
+    radial-gradient(circle at 78% 20%, rgba(255,255,255,.2), transparent 25%),
+    linear-gradient(135deg, #ff914f, #e84d20);
 }
 
 .mountop-visual {
   background:
-    radial-gradient(circle at 72% 20%, rgba(255,255,255,.18), transparent 25%),
-    linear-gradient(135deg, #7aad58, #2f6d4c);
+    radial-gradient(circle at 78% 20%, rgba(255,255,255,.18), transparent 25%),
+    linear-gradient(135deg, #82b95e, #2f6d4c);
 }
 
 .card-visual::before,
 .card-visual::after {
   content: "";
   position: absolute;
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.2);
   border-radius: 50%;
 }
-.card-visual::before { width: 280px; height: 280px; }
-.card-visual::after { width: 380px; height: 380px; }
+.card-visual::before { width: 270px; height: 270px; }
+.card-visual::after { width: 370px; height: 370px; }
 
-.food-badge,
-.visual-label {
+.food-badge {
   position: absolute;
+  top: 18px;
+  left: 18px;
   z-index: 3;
-  background: white;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--white);
   color: var(--ink);
   font-size: 11px;
   font-weight: 800;
-  border-radius: 999px;
-  padding: 8px 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,.18);
+  transform: rotate(-4deg);
 }
-.food-badge { top: 18px; left: 18px; transform: rotate(-4deg); }
-.visual-label { right: 18px; bottom: 18px; transform: rotate(3deg); }
 
 .burger-art,
 .bowl-art {
@@ -191,7 +149,7 @@ h1 {
   height: 150px;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 18px 20px rgba(0,0,0,.22));
+  filter: drop-shadow(0 18px 20px rgba(0,0,0,.23));
 }
 
 .burger-art span { position: absolute; left: 18px; width: 134px; }
@@ -237,9 +195,9 @@ h1 {
 .grain-one { left: 36px; top: 75px; }
 .grain-two { right: 65px; top: 48px; }
 
-.card-content { padding: 25px 26px 28px; }
+.card-content { padding: 24px 26px 28px; }
 .card-kicker {
-  display: inline-block;
+  display: block;
   margin-bottom: 8px;
   color: #b8bab2;
   font-size: 11px;
@@ -250,20 +208,20 @@ h1 {
 .card-content h2 {
   margin: 0;
   font-family: "Oswald", sans-serif;
-  font-size: clamp(32px, 3vw, 44px);
+  font-size: clamp(31px, 3vw, 43px);
   line-height: 1;
   text-transform: uppercase;
 }
 .card-content p {
-  min-height: 48px;
-  margin: 12px 0 22px;
+  min-height: 44px;
+  margin: 11px 0 20px;
   color: #c7c9c1;
   line-height: 1.5;
 }
 
 .order-button {
   min-height: 54px;
-  padding: 14px 18px;
+  padding: 13px 16px 13px 19px;
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
@@ -272,60 +230,42 @@ h1 {
   font-weight: 800;
   transition: transform .2s ease, filter .2s ease;
 }
-.order-button:hover { transform: translateY(-2px); filter: brightness(1.05); }
-.urban-button { background: var(--orange); color: white; }
+.order-button:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.urban-button { background: var(--orange); color: var(--white); }
 .mountop-button { background: var(--lime); color: var(--ink); }
-.order-button span {
-  width: 31px;
-  height: 31px;
+.order-button span:last-child {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   background: rgba(255,255,255,.2);
   font-size: 17px;
 }
-.mountop-button span { background: rgba(17,19,15,.12); }
-
-footer {
-  min-height: 52px;
-  padding: 12px clamp(20px, 5vw, 72px);
-  border-top: 1px solid rgba(255,255,255,.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-footer span { font-weight: 800; }
-footer small { color: #aeb0a8; }
+.mountop-button span:last-child { background: rgba(17,19,15,.12); }
 
 @media (max-width: 800px) {
-  .hero { padding-top: 34px; }
+  .page-shell { padding: 24px 18px; overflow: auto; }
   .restaurant-grid { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; }
-  .card-visual { height: 210px; }
+  .card-visual { height: 205px; }
 }
 
 @media (max-width: 520px) {
-  .topbar { min-height: 66px; padding-inline: 16px; }
-  .header-note { display: none; }
-  .hero { width: min(100% - 28px, 1180px); padding: 28px 0 34px; }
-  h1 { font-size: 45px; }
-  .subtitle { margin-bottom: 24px; }
+  h1 { font-size: 42px; }
+  .subtitle { margin-bottom: 22px; }
   .restaurant-grid { gap: 18px; }
   .restaurant-card { border-radius: 22px; }
-  .card-visual { height: 190px; }
-  .card-content { padding: 22px 20px 23px; }
+  .card-visual { height: 185px; }
+  .card-content { padding: 21px 20px 23px; }
   .burger-art, .bowl-art { transform: scale(.88); }
-  footer { justify-content: center; }
-  footer small { display: none; }
 }
 
 @media (max-height: 760px) and (min-width: 801px) {
-  .hero { padding-top: 25px; padding-bottom: 28px; }
-  h1 { font-size: clamp(45px, 5.6vw, 70px); }
-  .subtitle { margin-bottom: 22px; }
-  .card-visual { height: 190px; }
-  .card-content { padding-top: 20px; padding-bottom: 22px; }
+  .page-shell { padding-block: 18px; }
+  h1 { font-size: clamp(42px, 5vw, 64px); }
+  .subtitle { margin-bottom: 20px; }
+  .card-visual { height: 180px; }
+  .card-content { padding-top: 19px; padding-bottom: 21px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
