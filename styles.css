@@ -3,6 +3,9 @@
   --panel: #191c17;
   --lime: #c8ef4b;
   --orange: #ff7135;
+  --purple: #7d3cff;
+  --purple-deep: #4b168f;
+  --purple-soft: #b68cff;
   --white: #ffffff;
   --muted: #c7c9c1;
 }
@@ -114,8 +117,9 @@ h1 span { color: var(--lime); }
 
 .mountop-visual {
   background:
-    radial-gradient(circle at 78% 20%, rgba(255,255,255,.18), transparent 25%),
-    linear-gradient(135deg, #82b95e, #2f6d4c);
+    radial-gradient(circle at 78% 20%, rgba(255,255,255,.20), transparent 25%),
+    radial-gradient(circle at 28% 72%, rgba(182,140,255,.28), transparent 30%),
+    linear-gradient(135deg, var(--purple), var(--purple-deep));
 }
 
 .card-visual::before,
@@ -232,7 +236,7 @@ h1 span { color: var(--lime); }
 }
 .order-button:hover { transform: translateY(-2px); filter: brightness(1.06); }
 .urban-button { background: var(--orange); color: var(--white); }
-.mountop-button { background: var(--lime); color: var(--ink); }
+.mountop-button { background: linear-gradient(135deg, var(--purple-soft), var(--purple)); color: var(--white); }
 .order-button span:last-child {
   width: 32px;
   height: 32px;
@@ -242,7 +246,7 @@ h1 span { color: var(--lime); }
   background: rgba(255,255,255,.2);
   font-size: 17px;
 }
-.mountop-button span:last-child { background: rgba(17,19,15,.12); }
+.mountop-button span:last-child { background: rgba(255,255,255,.18); }
 
 @media (max-width: 800px) {
   .page-shell { padding: 24px 18px; overflow: auto; }
@@ -271,3 +275,11 @@ h1 span { color: var(--lime); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
 }
+
+/* Mountop brand accents */
+.mountop-card:hover {
+  border-color: rgba(182, 140, 255, .65);
+  box-shadow: 0 38px 90px rgba(74, 22, 143, .34);
+}
+.mountop-card .card-kicker { color: var(--purple-soft); }
+.mountop-card h2 { color: #f5efff; }
